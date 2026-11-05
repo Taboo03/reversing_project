@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 812.9884999999998 1514.5689999999997" width="812.9884999999998" height="1514.5689999999997" style="--bg:#18181B;--fg:#F4F4F5;--line:#71717A;--muted:#A1A1AA;--surface:#27272A;--border:#3F3F46;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="START" data-to="INIT" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.8487499999999,76.9 335.8487499999999,124.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INIT" data-to="CHECK_DBG" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.8487499999999,161.8 335.8487499999999,209.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CHECK_DBG" data-to="DETECTED" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="디버거 감지 (True)" points="295.5875833333332,411.1058333333333 295.5875833333332,720.0200000000001 185.83349999999993,720.0200000000001 185.83349999999993,800.32" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CHECK_DBG" data-to="INPUT" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="디버거 없음 (False)" points="376.10991666666655,411.1058333333333 376.10991666666655,487.36699999999996 485.86399999999986,487.36699999999996 485.86399999999986,567.667" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INPUT" data-to="LEN_CHECK" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="485.86399999999986,621.467 485.86399999999986,669.467" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="LEN_CHECK" data-to="FAIL_LEN" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="아니오 (!= 32)" points="452.27183333333323,837.4278333333333 452.27183333333323,907.0200000000001 377.5767499999999,907.0200000000001 377.5767499999999,987.32" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="LEN_CHECK" data-to="XOR_CHECK" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="예 (== 32)" points="519.4561666666665,837.4278333333333 519.4561666666665,907.02 594.1512499999999,907.02 594.1512499999999,987.3199999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="XOR_CHECK" data-to="FAIL_XOR" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="불일치" points="541.2930833333332,1251.6108333333332 541.2930833333332,1340.4689999999998 515.2054999999998,1340.4689999999998 515.2054999999998,1420.7689999999998" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="XOR_CHECK" data-to="SUCCESS" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="모두 일치" points="647.0094166666665,1251.6108333333332 647.0094166666665,1340.4689999999998 673.0969999999998,1340.4689999999998 673.0969999999999,1420.7689999999998" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="CHECK_DBG" data-to="DETECTED" data-label="디버거 감지 (True)">
+  <rect x="130.33349999999993" y="727.0200000000001" width="110.31400000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="185.49049999999994" y="742.1700000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">디버거 감지 (True)</text>
+</g>
+<g class="edge-label" data-from="CHECK_DBG" data-to="INPUT" data-label="디버거 없음 (False)">
+  <rect x="428.86399999999986" y="494.36699999999996" width="113.87800000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="485.8029999999999" y="509.51699999999994" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">디버거 없음 (False)</text>
+</g>
+<g class="edge-label" data-from="LEN_CHECK" data-to="FAIL_LEN" data-label="아니오 (!= 32)">
+  <rect x="336.0767499999999" y="914.0200000000001" width="82.99000000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="377.5717499999999" y="929.1700000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">아니오 (!= 32)</text>
+</g>
+<g class="edge-label" data-from="LEN_CHECK" data-to="XOR_CHECK" data-label="예 (== 32)">
+  <rect x="562.6512499999999" y="914.02" width="62.794" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="594.0482499999999" y="929.17" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">예 (== 32)</text>
+</g>
+<g class="edge-label" data-from="XOR_CHECK" data-to="FAIL_XOR" data-label="불일치">
+  <rect x="488.2054999999999" y="1347.4689999999998" width="53.29" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="514.8504999999999" y="1362.619" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">불일치</text>
+</g>
+<g class="edge-label" data-from="XOR_CHECK" data-to="SUCCESS" data-label="모두 일치">
+  <rect x="639.5969999999998" y="1347.4689999999998" width="66.952" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="673.0729999999998" y="1362.619" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">모두 일치</text>
+</g>
+<g class="node" data-id="START" data-label="프로그램 시작" data-shape="stadium">
+  <rect x="269.30224999999984" y="40" width="133.09300000000002" height="36.900000000000006" rx="18.450000000000003" ry="18.450000000000003" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.8487499999999" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">프로그램 시작</text>
+</g>
+<g class="node" data-id="INIT" data-label="콘솔 초기화 &amp; 던전 보물상자 아스키 아트 출력" data-shape="rectangle">
+  <rect x="170.0082499999999" y="124.9" width="331.681" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.8487499999999" y="143.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">콘솔 초기화 &amp; 던전 보물상자 아스키 아트 출력</text>
+</g>
+<g class="node" data-id="CHECK_DBG" data-label="1단계: 안티디버깅 결계 검사
+is_debugger_present" data-shape="diamond">
+  <polygon points="335.8487499999999,209.8 456.6322499999999,330.5835 335.8487499999999,451.367 215.06524999999988,330.5835" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.8487499999999" y="330.5835" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="335.8487499999999" dy="-3.9000000000000012">1단계: 안티디버깅 결계 검사</tspan><tspan x="335.8487499999999" dy="16.900000000000002">is_debugger_present</tspan></text>
+</g>
+<g class="node" data-id="DETECTED" data-label="👁️ 미믹 발동!
+'사악한 시선이 디버거를 감지했습니다'
+즉시 강제 종료 (Exit 1)" data-shape="rectangle">
+  <rect x="39.99999999999997" y="800.32" width="291.6669999999999" height="70.7" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="185.83349999999993" y="835.6700000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="185.83349999999993" dy="-12.350000000000001">👁️ 미믹 발동!</tspan><tspan x="185.83349999999993" dy="16.900000000000002">&#39;사악한 시선이 디버거를 감지했습니다&#39;</tspan><tspan x="185.83349999999993" dy="16.900000000000002">즉시 강제 종료 (Exit 1)</tspan></text>
+</g>
+<g class="node" data-id="INPUT" data-label="2단계: 주문 입력
+'보물상자를 열 주문을 외우세요: '" data-shape="rectangle">
+  <rect x="359.6669999999999" y="567.667" width="252.39399999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="485.8639999999999" y="594.567" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="485.8639999999999" dy="-3.9000000000000012">2단계: 주문 입력</tspan><tspan x="485.8639999999999" dy="16.900000000000002">&#39;보물상자를 열 주문을 외우세요: &#39;</tspan></text>
+</g>
+<g class="node" data-id="LEN_CHECK" data-label="3단계: 입력 길이 검사
+길이가 32글자인가?" data-shape="diamond">
+  <polygon points="485.86399999999986,669.467 586.6404999999999,770.2434999999999 485.86399999999986,871.0199999999999 385.08749999999986,770.2434999999999" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="485.86399999999986" y="770.2434999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="485.86399999999986" dy="-3.9000000000000012">3단계: 입력 길이 검사</tspan><tspan x="485.86399999999986" dy="16.900000000000002">길이가 32글자인가?</tspan></text>
+</g>
+<g class="node" data-id="FAIL_LEN" data-label="&quot;[-" data-shape="rectangle">
+  <rect x="347.5767499999999" y="987.32" width="60" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="377.5767499999999" y="1005.7700000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">&quot;[-</text>
+</g>
+<g class="node" data-id="XOR_CHECK" data-label="4단계: 고대 주문 검증
+입력값[i] ^ 0x5A == ENCRYPTED_KEY[i] ?" data-shape="diamond">
+  <polygon points="594.1512499999999,987.3199999999999 752.7257499999998,1145.8944999999999 594.1512499999999,1304.4689999999998 435.57674999999995,1145.8944999999999" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="594.1512499999999" y="1145.8944999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="594.1512499999999" dy="-3.9000000000000012">4단계: 고대 주문 검증</tspan><tspan x="594.1512499999999" dy="16.900000000000002">입력값[i] ^ 0x5A == ENCRYPTED_KEY[i] ?</tspan></text>
+</g>
+<g class="node" data-id="FAIL_XOR" data-label="&quot;[-" data-shape="rectangle">
+  <rect x="485.20549999999986" y="1420.7689999999998" width="60" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="515.2054999999998" y="1439.2189999999998" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">&quot;[-</text>
+</g>
+<g class="node" data-id="SUCCESS" data-label="🎉 보물상자가 활짝 열림!
+👑 플래그 획득 성공!" data-shape="rectangle">
+  <rect x="573.2054999999998" y="1420.7689999999998" width="199.783" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="673.0969999999998" y="1447.6689999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="673.0969999999998" dy="-3.9000000000000012">🎉 보물상자가 활짝 열림!</tspan><tspan x="673.0969999999998" dy="16.900000000000002">👑 플래그 획득 성공!</tspan></text>
+</g>
+</svg>

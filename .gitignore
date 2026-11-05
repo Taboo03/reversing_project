@@ -1,0 +1,13 @@
+# Compiled binaries
+auth_core
+dungeon_chest
+*.exe
+*.o
+*.obj
+*.dSYM/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
